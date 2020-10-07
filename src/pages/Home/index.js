@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import Modal from '../../components/Modal';
 
 import './styles.css';
 
 const Home = () => {
+  const [modal, setModal] = useState(null);
+  console.log(modal)
   return (
     <>
-    
-
     <div className="container">
 
-    <form action="" className="form">
+      <div className="form">
       <input placeholder="Digite o nome da escola" type="text"/>
-      <a href="escola/cadastro">Adicionar</a>
-    </form>
+      <button onClick={() => setModal(true)}>Adicionar</button>
+      <Modal modal={modal} setModal={setModal}></Modal>
+      </div>
+
       <section className="box__card">
         <article className="card">
           <div className="card__info"> 
